@@ -1,0 +1,29 @@
+version: 2
+
+models:
+  - name: stg_src_tpch_sf1__customer
+    description: Customer staging view.
+    columns:
+    - name: c_custkey
+      description: This is the Customer Key.
+      tests:
+        - not_null
+        - unique
+
+  - name: stg_src_tpch_sf1__nation
+    description: Nation staging view.
+    columns:
+    - name: n_nationkey
+      description: This is the Nation Key.
+      tests:
+        - not_null
+        - unique
+
+  - name: stg_src_tpch_sf1__region
+    description: Region staging view.
+    columns:
+    - name: r_regionkey
+      description: This is the Region Key.
+      tests:
+        - not_null
+        - unique
