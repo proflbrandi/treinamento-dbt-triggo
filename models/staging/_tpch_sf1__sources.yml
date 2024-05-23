@@ -1,0 +1,38 @@
+version: 2
+
+sources:
+  - name: src_tpch_sf1
+    database: raw
+    schema: tpch_sf1
+    description: Our sample source for demonstration.
+    tables:
+
+      - name: customer
+        description: Customer table with personal details.
+        columns:
+        - name: c_custkey
+          description: This is the Customer Key.
+          tests:
+            - not_null
+            - unique
+
+      - name: nation
+        description: Nations table holding repetitive data.
+        columns:
+        - name: n_nationkey
+          description: This is the Nation Key.
+          tests:
+            - not_null
+            - unique
+
+      - name: region
+        description: Regions of the globe.
+        columns:
+        - name: r_name
+          description: Region name.
+        - name: r_regionkey
+          description: Unique ID for region.
+          tests:
+            - unique
+        - name: r_comment
+          description: Region comments.
